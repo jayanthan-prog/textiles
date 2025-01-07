@@ -153,6 +153,17 @@ const Contact = () => {
             </form>
           </motion.div>
         </div>
+
+        {/* Embed Google Map */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-4">Our Location</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d244.64813403719475!2d78.28518978476687!3d11.160205951106294!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babca7d84c97715%3A0x2c0e83f5c61798e8!2sAshok%20Textile%20Mills%20(P)Ltd!5e0!3m2!1sen!2sus!4v1736223715950!5m2!1sen!2sus"
+            width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
       </div>
     </motion.div>
   );

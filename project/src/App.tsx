@@ -15,6 +15,7 @@ import Quality from './pages/Quality';
 import CSR from './pages/CSR';
 import Career from './pages/Career';
 import Contact from './pages/Contact';
+import Product from './pages/Product';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
             <Route path="/csr" element={<CSR />} />
             <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/product" element={<Product />} />
+
           </Routes>
         </AnimatePresence>
         <Footer />

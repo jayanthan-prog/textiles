@@ -13,6 +13,7 @@ const Navbar = () => {
     { path: '/management', label: 'Management' },
     { path: '/why-us', label: 'Why Us' },
     { path: '/infrastructure', label: 'Infrastructure' },
+    { path: '/product', label: 'Products' },   
     { path: '/quality', label: 'Quality' },
     { path: '/csr', label: 'CSR' },
     { path: '/career', label: 'Career' },

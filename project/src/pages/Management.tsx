@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Target, Shield } from 'lucide-react';
+import { Users, Target, Shield, Phone, MapPin } from 'lucide-react';
 
 const Management = () => {
   return (
@@ -12,6 +12,7 @@ const Management = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Management</h1>
 
+        {/* Leadership Section */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -23,13 +24,14 @@ const Management = () => {
             <h2 className="text-2xl font-bold">Leadership</h2>
           </div>
           <p className="text-gray-600 mb-6">
-            Under the visionary leadership of our Managing Director Mr. P. Ashokkumar, 
-            Ashok Textile Mills has maintained consistent success in textile manufacturing 
-            for over two decades. His expertise ensures seamless coordination across all 
-            departments for timely order fulfillment.
+            Success and consistency in the field of textile manufacturing for more than two decades is possible only with proper management. Our Managing Director, Mr. P. Ashokkumar, is the backbone of Ashok Textile Mills. His leadership and vision have ensured seamless coordination between various departments, resulting in timely order fulfillment and consistent product quality.
+          </p>
+          <p className="text-gray-600 mb-6">
+            The efficiency of our International Standard for Quality Management System (QMS) is certified with ISO 9001:2015 certification by TUV SUD South Asia Private Limited. This certification affirms our commitment to delivering 100% quality products, adhering to protocols at every stage of the manufacturing process.
           </p>
         </motion.div>
 
+        {/* Mission Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -47,6 +49,7 @@ const Management = () => {
             </ul>
           </motion.div>
 
+          {/* Quality Management Section */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -63,6 +66,8 @@ const Management = () => {
             </ul>
           </motion.div>
         </div>
+
+      
       </div>
     </motion.div>
   );

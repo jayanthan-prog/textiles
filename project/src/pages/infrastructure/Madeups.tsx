@@ -12,6 +12,7 @@ const Madeups = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Made-ups Division</h1>
 
+        {/* Premium Home Textiles Section */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -23,10 +24,15 @@ const Madeups = () => {
             <h2 className="text-2xl font-bold">Premium Home Textiles</h2>
           </div>
           <p className="text-gray-600 mb-6">
-            Established in 2016, our Made-ups division specializes in high-quality home textile products.
-            The facility features modern JUKI machines in a fully air-conditioned environment for optimal production conditions.
+            Established in 2016, our Made-ups division specializes in high-quality home textile products. 
+            We focus on internal space furnishing with products like bed linens, curtains, and other decorative textiles. 
+            The manufacturing facility is equipped with the latest JUKI machines and operates in a fully air-conditioned environment, ensuring a comfortable and productive work atmosphere.
+          </p>
+          <p className="text-gray-600 mb-6">
+            Our products are known for their superior quality, and the facility includes dedicated sections for Cutting, Stitching, Ironing, and Packing to ensure every product meets global standards.
           </p>
 
+          {/* Product Range and Quality Assurance */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-blue-50 rounded-lg p-6">
               <Package className="h-8 w-8 text-blue-600 mb-3" />
@@ -52,6 +58,7 @@ const Madeups = () => {
           </div>
         </motion.div>
 
+        {/* Production Facility Section */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -73,6 +80,20 @@ const Madeups = () => {
               </ul>
             </div>
           </div>
+        </motion.div>
+
+        {/* Mission and Commitment */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="bg-white rounded-lg shadow-lg p-8 mt-8 text-center"
+        >
+          <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
+          <p className="text-gray-600">
+            At Ashok Textile Mills, our mission is to deliver premium made-up textile products that enhance the beauty and functionality of living spaces. 
+            We strive for excellence through advanced machinery, skilled labor, and rigorous quality control. Every product is crafted to meet international standards, ensuring that our clients receive the best in home textiles.
+          </p>
         </motion.div>
       </div>
     </motion.div>
