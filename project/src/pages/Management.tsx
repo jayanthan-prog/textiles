@@ -40,7 +40,7 @@ const Management = () => {
             className="bg-white rounded-lg shadow-lg p-8"
           >
             <Target className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Our Mission</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#cfa079]">Our Mission</h3>
             <ul className="space-y-3 text-gray-600">
               <li>• Deliver 100% quality products</li>
               <li>• Maintain international standards</li>
@@ -57,7 +57,7 @@ const Management = () => {
             className="bg-white rounded-lg shadow-lg p-8"
           >
             <Shield className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Quality Management</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#cfa079]">Quality Management</h3>
             <ul className="space-y-3 text-gray-600">
               <li>• ISO 9001:2015 certified</li>
               <li>• Strict quality protocols</li>

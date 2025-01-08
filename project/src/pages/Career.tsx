@@ -77,19 +77,19 @@ const Career = () => {
         className="page-container"
       >
         <div className="max-w-4xl mx-auto py-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-8">Career Opportunities</h1>
+          <h1 className="text-4xl font-extrabold text-gray-800 text-center mb-8">Career Opportunities</h1>
 
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-gray-800 rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8"
           >
             <div className="flex items-center mb-6">
-              <Briefcase className="h-8 w-8 text-yellow-500 mr-3" />
-              <h2 className="text-2xl font-bold text-white">Join Our Team</h2>
+              <Briefcase className="h-8 w-8 text-indigo-600 mr-3" />
+              <h2 className="text-2xl font-bold text-gray-800">Join Our Team</h2>
             </div>
-            <p className="text-gray-400 mb-6 text-center">
+            <p className="text-gray-600 mb-6 text-center">
               We're always looking for talented individuals to join our team. Submit your
               application below, and we'll contact you when relevant opportunities arise.
             </p>
@@ -107,11 +107,11 @@ const Career = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <label className="block text-sm font-medium text-gray-200">First Name</label>
+                  <label className="block text-sm font-medium text-gray-700">First Name</label>
                   <input
                     type="text"
                     required
-                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.firstName ? 'border-red-500' : ''}`}
+                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.firstName ? 'border-red-500' : ''}`}
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                   />
@@ -122,11 +122,11 @@ const Career = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <label className="block text-sm font-medium text-gray-200">Last Name</label>
+                  <label className="block text-sm font-medium text-gray-700">Last Name</label>
                   <input
                     type="text"
                     required
-                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.lastName ? 'border-red-500' : ''}`}
+                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.lastName ? 'border-red-500' : ''}`}
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                   />
@@ -139,11 +139,11 @@ const Career = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.8 }}
                 >
-                  <label className="block text-sm font-medium text-gray-200">Email</label>
+                  <label className="block text-sm font-medium text-gray-700">Email</label>
                   <input
                     type="email"
                     required
-                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.email ? 'border-red-500' : ''}`}
+                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.email ? 'border-red-500' : ''}`}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -154,11 +154,11 @@ const Career = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.8 }}
                 >
-                  <label className="block text-sm font-medium text-gray-200">Phone</label>
+                  <label className="block text-sm font-medium text-gray-700">Phone</label>
                   <input
                     type="tel"
                     required
-                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.phone ? 'border-red-500' : ''}`}
+                    className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.phone ? 'border-red-500' : ''}`}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
@@ -170,10 +170,10 @@ const Career = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <label className="block text-sm font-medium text-gray-200">Message</label>
+                <label className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea
                   rows={4}
-                  className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.message ? 'border-red-500' : ''}`}
+                  className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.message ? 'border-red-500' : ''}`}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
@@ -184,11 +184,11 @@ const Career = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
               >
-                <label className="block text-sm font-medium text-gray-200">Verify: 20-5?</label>
+                <label className="block text-sm font-medium text-gray-700">Verify: 20-5?</label>
                 <input
                   type="text"
                   required
-                  className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 ${formError && !formData.captcha ? 'border-red-500' : ''}`}
+                  className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ${formError && !formData.captcha ? 'border-red-500' : ''}`}
                   value={formData.captcha}
                   onChange={(e) => setFormData({ ...formData, captcha: e.target.value })}
                 />
@@ -199,11 +199,11 @@ const Career = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4 }}
               >
-                <label className="block text-sm font-medium text-gray-200">Add Resume (PDF Only)</label>
+                <label className="block text-sm font-medium text-gray-700">Add Resume (PDF Only)</label>
                 <input
                   type="file"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   onChange={handleFileChange}
                 />
               </motion.div>
@@ -215,7 +215,7 @@ const Career = () => {
               >
                 <button
                   type="submit"
-                  className="inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                  className="inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <Send className="h-4 w-4 mr-2" />
                   Submit Application

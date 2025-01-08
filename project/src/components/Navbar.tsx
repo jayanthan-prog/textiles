@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -13,17 +14,29 @@ const Navbar = () => {
     { path: '/management', label: 'Management' },
     { path: '/why-us', label: 'Why Us' },
     { path: '/infrastructure', label: 'Infrastructure' },
-    { path: '/product', label: 'Products' },   
+    { path: '/product', label: 'Products' },
     { path: '/quality', label: 'Quality' },
     { path: '/csr', label: 'CSR' },
     { path: '/career', label: 'Career' },
     { path: '/contact', label: 'Contact' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
+    <nav
+      className={`fixed w-full z-50 transition-colors duration-300 bg-[#8f999f]`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
+          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
@@ -41,9 +54,13 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
-                  location.pathname === item.path
-                    ? 'text-blue-600'
-                    : 'text-gray-600 hover:text-blue-600'
+                  isScrolled
+                    ? location.pathname === item.path
+                      ? 'text-blue-600'
+                      : 'text-black hover:text-blue-600'
+                    : location.pathname === item.path
+                    ? 'text-blue-400'
+                    : 'text-white hover:text-blue-400'
                 }`}
               >
                 {item.label}
@@ -61,7 +78,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 ${
+                isScrolled ? 'text-black' : 'text-white'
+              }`}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -82,9 +101,9 @@ const Navbar = () => {
               key={item.path}
               to={item.path}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                location.pathname === item.path
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                isScrolled
+                  ? 'text-black hover:text-blue-600 hover:bg-blue-50'
+                  : 'text-white hover:text-blue-400'
               }`}
               onClick={() => setIsOpen(false)}
             >

@@ -16,7 +16,7 @@ const Product = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Product Gallery</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/p2-1-300x211.jpg"
                 alt="product 1"
@@ -24,7 +24,7 @@ const Product = () => {
               />
               <p className="text-center">Product 1</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g1-1-300x211.jpg"
                 alt="product g1"
@@ -32,7 +32,7 @@ const Product = () => {
               />
               <p className="text-center">Product G1</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g2-1-300x211.jpg"
                 alt="product g2"
@@ -40,7 +40,7 @@ const Product = () => {
               />
               <p className="text-center">Product G2</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g3-1-300x211.jpg"
                 alt="product g3"
@@ -48,7 +48,7 @@ const Product = () => {
               />
               <p className="text-center">Product G3</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g4-1-300x211.jpg"
                 alt="product g4"
@@ -56,7 +56,7 @@ const Product = () => {
               />
               <p className="text-center">Product G4</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g5-1-300x211.jpg"
                 alt="product g5"
@@ -64,7 +64,7 @@ const Product = () => {
               />
               <p className="text-center">Product G5</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
                 src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/product-g6-1-300x211.jpg"
                 alt="product g6"

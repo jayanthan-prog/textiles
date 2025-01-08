@@ -9,28 +9,32 @@ const Infrastructure = () => {
       icon: <Factory className="h-12 w-12 text-blue-600" />,
       description: "Rieter & LMW Ring Frames, Murata Vortex, Rieter Airjet",
       capacity: "40 Tons/Day",
-      link: "/infrastructure/spinning"
+      link: "/infrastructure/spinning",
+      backgroundImage: "url('https://ashoktextilemills.com/file/wp-content/uploads/2023/03/Airjet.jpg')"
     },
     {
       title: "Sizing",
       icon: <Cog className="h-12 w-12 text-blue-600" />,
       description: "Sizing - Karl Mayer Pro Size, Warping - Karl Mayer",
       capacity: "150,000 Meters/Day",
-      link: "/infrastructure/sizing"
+      link: "/infrastructure/sizing",
+      backgroundImage: "url('https://ashoktextilemills.com/file/wp-content/uploads/2023/03/sizing.jpg')"
     },
     {
       title: "Weaving",
       icon: <Box className="h-12 w-12 text-blue-600" />,
       description: "Weaving - Toyota Looms, Dobby Looms – Toyota",
       capacity: "150,000 Meters/Day",
-      link: "/infrastructure/weaving"
+      link: "/infrastructure/weaving",
+      backgroundImage: "url('https://ashoktextilemills.com/file/wp-content/uploads/2023/03/weaving.jpg')"
     },
     {
       title: "Made-ups",
       icon: <Scissors className="h-12 w-12 text-blue-600" />,
       description: "Juki Sewing unit for premium quality finished products",
       capacity: "Custom Production",
-      link: "/infrastructure/madeups"
+      link: "/infrastructure/madeups",
+      backgroundImage: "url('https://ashoktextilemills.com/file/wp-content/uploads/2023/03/made-up-products-1.jpg')"
     }
   ];
 
@@ -57,12 +61,13 @@ const Infrastructure = () => {
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -5 }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
+            style={{ backgroundImage: division.backgroundImage, backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
             <Link to={division.link}>
-              <div className="p-8">
+              <div className="p-8 bg-black bg-opacity-50 rounded-lg">
                 <div className="mb-4">{division.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{division.title}</h3>
-                <p className="text-gray-600 mb-4">{division.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{division.title}</h3>
+                <p className="text-white mb-4">{division.description}</p>
                 <div className="bg-blue-50 rounded-lg p-4">
                   <p className="text-blue-600 font-semibold">
                     Production Capacity: {division.capacity}

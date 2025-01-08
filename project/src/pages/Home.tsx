@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Award, Factory, Shield } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
         transition={{ duration: 1 }}
         className="relative h-screen bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(https://ashoktextilemills.com/file/wp-content/uploads/2022/11/Infrastructure.jpg'
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(https://ashoktextilemills.com/file/wp-content/uploads/2022/11/Infrastructure.jpg)'
         }}
       >
         <div className="relative h-full max-w-7xl mx-auto px-4 flex items-center">
@@ -43,8 +43,107 @@ const Home = () => {
         </div>
       </motion.section>
 
+      {/* Animated Image Carousel */}
+      <motion.section className="relative w-full overflow-hidden py-16">
+        <div className="absolute inset-0 bg-gray-900 opacity-50 z-10"></div>
+        <motion.div
+          className="flex space-x-4 z-20"
+          animate={{
+            x: ['0%', '-100%', '-200%', '-300%'],
+          }}
+          transition={{
+            duration: 11, // Reduced from 15 to 9 for faster speed
+            repeat: Infinity,
+            repeatType: 'loop',
+            ease: 'linear',
+          }}
+        >
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/home-1.jpg"
+            alt="Image 1"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2022/05/05-150x150.jpg"
+            alt="Image 2"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/banner1-2.jpg"
+            alt="Image 3"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/banner2-1.jpg"
+            alt="Image 4"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/banner4-1.jpg"
+            alt="Image 5"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          {/* New Images */}
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/RingFrame-Linkconer.jpg"
+            alt="RingFrame Linkconer"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/Vortex.jpg"
+            alt="Vortex"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/Airjet.jpg"
+            alt="Airjet"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/sizing.jpg"
+            alt="Sizing"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.img
+            src="https://ashoktextilemills.com/file/wp-content/uploads/2023/03/weaving.jpg"
+            alt="Weaving"
+            className="w-full h-96 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+        </motion.div>
+      </motion.section>
+
       {/* Key Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-100 to-blue-200 text-center text-gray-800">
+      <section className="py-16 bg-gradient-to-r from-[#8f999f] to-[#8f999f] text-center text-white">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[{
             number: "54+ Million Metres",
@@ -64,10 +163,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ type: "spring", stiffness: 150, damping: 25 }}
-              className="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-300"
+              className="bg-[#8f999f] p-8 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-300"
             >
-              <div className="text-4xl font-bold text-blue-700">{stat.number}</div>
-              <p className="text-lg text-gray-600 mt-2">{stat.label}</p>
+              <div className="text-4xl font-bold text-white">{stat.number}</div>
+              <p className="text-lg text-white mt-2">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -110,51 +209,22 @@ const Home = () => {
           }, {
             title: "Made-ups", 
             link: "/infrastructure/madeups"
-          }].map((division, index) => (
+          }].map((div, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.1, rotate: 3 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white p-8 rounded-lg shadow-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.2, duration: 0.8 }}
+              className="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-300"
             >
-              <h3 className="text-xl font-bold mb-4">{division.title}</h3>
-              <Link to={division.link} className="text-blue-600 font-semibold">
-                READ MORE
-              </Link>
+              <h3 className="text-2xl font-bold text-gray-800">{div.title}</h3>
+              <Link to={div.link} className="mt-4 text-blue-600 hover:underline">Explore</Link>
             </motion.div>
           ))}
         </div>
       </section>
-
-      {/* Scroll-based Animation Example */}
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        whileInView={{ opacity: 1 }} 
-        transition={{ duration: 1 }}
-        className="text-center py-20 bg-gray-200"
-      >
-        <h3 className="text-2xl font-bold mb-4">Explore Our Story</h3>
-        <p className="max-w-3xl mx-auto text-lg mb-6">
-          Scroll down to discover more about our history, products, and values that drive us forward.
-        </p>
-        <motion.div 
-          initial={{ scale: 0 }} 
-          animate={{ scale: 1 }} 
-          transition={{ type: "spring", stiffness: 200 }}
-          className="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center cursor-pointer"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </motion.div>
-      </motion.div>
-
-       
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white text-center py-4">
-        <p>&copy; 2023 Ashok Textile Mills. All Rights Reserved.</p>
-      </footer>
     </div>
   );
-};
+}
 
 export default Home;

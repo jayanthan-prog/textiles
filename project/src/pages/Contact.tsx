@@ -17,6 +17,10 @@ const Contact = () => {
 
   const [captcha, setCaptcha] = useState(generateCaptcha());
 
+  // Chatbot state
+  const [chatHistory, setChatHistory] = useState<any[]>([]);
+  const [userMessage, setUserMessage] = useState<string>('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.captchaInput === captcha) {
@@ -26,6 +30,65 @@ const Contact = () => {
       setCaptcha(generateCaptcha());
     }
   };
+
+  // Handle user message in the chatbot
+  const handleUserMessage = async () => {
+    const userMessageText = userMessage.trim();
+    if (!userMessageText) return;
+
+    // Add user message to chat history
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      { sender: 'user', message: userMessageText },
+    ]);
+
+    // Get chatbot response using OpenAI API
+    const botResponse = await getChatGPTResponse(userMessageText);
+    
+    // Add bot response to chat history
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      { sender: 'bot', message: botResponse },
+    ]);
+    setUserMessage('');
+  };
+
+  /// Function to get a response from Gemini API
+const getGeminiResponse = async (message: string): Promise<string> => {
+  const API_KEY = 'AIzaSyA80w_auc2GZ2iYqk91ekvIgl5lrYY1NTs';  // Replace with your Gemini API key
+  const endpoint = 'https://gemini-api-url.com/v1/completions';  // Replace with actual Gemini API URL
+  
+  const body = JSON.stringify({
+    model: 'gemini-model-id',  // Replace with the correct model ID for Gemini
+    prompt: message,
+    max_tokens: 150,
+    temperature: 0.7,  // Optional: You can adjust temperature for randomness
+  });
+
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${API_KEY}`,
+  };
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers,
+      body,
+    });
+
+    if (!response.ok) {
+      throw new Error('Error fetching response from Gemini API');
+    }
+
+    const data = await response.json();
+    // Assuming Gemini API responds in a similar format to OpenAI's
+    return data.choices[0].text.trim();
+  } catch (error) {
+    console.error('Error fetching from Gemini API:', error);
+    return 'Sorry, I couldn’t understand that. Please try again.';
+  }
+};
 
   return (
     <motion.div
@@ -154,6 +217,38 @@ const Contact = () => {
           </motion.div>
         </div>
 
+        {/* Chatbot Section */}
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-6">Chat With Ashok Assist
+          </h2>
+          <div className="space-y-4">
+            <div className="h-64 overflow-y-auto p-4 bg-gray-100 rounded-md mb-4">
+              {chatHistory.map((chat, index) => (
+                <div key={index} className={chat.sender === 'user' ? 'text-right' : 'text-left'}>
+                  <p className={chat.sender === 'user' ? 'font-bold text-blue-600' : 'font-semibold text-gray-800'}>
+                    {chat.message}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center">
+              <input
+                type="text"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                value={userMessage}
+                onChange={(e) => setUserMessage(e.target.value)}
+                placeholder="Ask me about Ashok Textile Mills..."
+              />
+              <button
+                onClick={handleUserMessage}
+                className="ml-2 bg-blue-600 text-white p-2 rounded-md"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Embed Google Map */}
         <div className="mt-8">
           <h2 className="text-2xl font-bold mb-4">Our Location</h2>
@@ -163,7 +258,6 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
       </div>
     </motion.div>
   );

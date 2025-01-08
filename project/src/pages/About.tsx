@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { History, MapPin, Award, Users } from 'lucide-react';
+import { History, MapPin, Award, Users, Globe, ShieldCheck, Star } from 'lucide-react';
 
 const About = () => {
   return (
@@ -7,7 +7,7 @@ const About = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="page-container" // Removed the background color class
+      className="page-container bg-[#f7f7f7] min-h-screen"
     >
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">About Us</h1>
@@ -106,17 +106,32 @@ const About = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            </motion.div>
             <h3 className="text-xl font-bold mb-2">25+</h3>
             <p className="text-gray-600">Years of Excellence</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Globe className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            </motion.div>
             <h3 className="text-xl font-bold mb-2">Global</h3>
             <p className="text-gray-600">Export Network</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ShieldCheck className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            </motion.div>
             <h3 className="text-xl font-bold mb-2">ISO 9001:2015</h3>
             <p className="text-gray-600">Certified Quality</p>
           </div>

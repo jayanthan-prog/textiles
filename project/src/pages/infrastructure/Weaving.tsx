@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Box, Target, Settings } from 'lucide-react';
-import './Weaving.css'; // Import the CSS file for weaving animation
 
 const Weaving = () => {
   return (
@@ -10,7 +9,7 @@ const Weaving = () => {
       exit={{ opacity: 0 }}
       className="page-container relative"
     >
-      {/* Weaving animation (moving threads) */}
+      {/* Weaving animation (moving threads)
       <motion.div
         className="weaving-animation absolute top-0 left-0 w-full h-full"
         initial={{ x: '-100%' }}
@@ -22,7 +21,7 @@ const Weaving = () => {
         }}
       >
         <div className="weaving-thread"></div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Main page content */}
       <div className="max-w-4xl mx-auto relative z-10">

@@ -36,7 +36,7 @@ const Quality = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-100 hover:ring-2 hover:ring-yellow-500"
           >
             <img
               src="https://ashoktextilemills.com/file/wp-content/uploads/2024/07/SA-8000.jpg"
@@ -50,12 +50,13 @@ const Quality = () => {
               </p>
             </div>
           </motion.div>
-            {/* ISO 9001:2015 */}
-            <motion.div
+
+          {/* ISO 9001:2015 */}
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-100 hover:ring-2 hover:ring-yellow-500"
           >
             <img
               src="https://ashoktextilemills.com/file/wp-content/uploads/2022/11/iso-9001-300x300.jpg"
@@ -70,13 +71,12 @@ const Quality = () => {
             </div>
           </motion.div>
 
-
           {/* GOTS Certification */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-100 hover:ring-2 hover:ring-yellow-500"
           >
             <img
               src="https://ashoktextilemills.com/file/wp-content/uploads/2022/11/gots-300x300.jpg"
@@ -96,7 +96,7 @@ const Quality = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-100 hover:ring-2 hover:ring-yellow-500"
           >
             <img
               src="https://ashoktextilemills.com/file/wp-content/uploads/2022/11/GRS-300x300.jpg"
@@ -116,7 +116,7 @@ const Quality = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-100 hover:ring-2 hover:ring-yellow-500"
           >
             <img
               src="https://ashoktextilemills.com/file/wp-content/uploads/2022/11/ct-300x300.jpg"
