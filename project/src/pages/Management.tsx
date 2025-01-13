@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Target, Shield, Phone, MapPin } from 'lucide-react';
+import { Users, Target, Shield,  } from 'lucide-react';
 
 const Management = () => {
   return (

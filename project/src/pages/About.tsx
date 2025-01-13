@@ -98,11 +98,69 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Key Stats Section */}
+        
+        {/* Employee Section */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1.2 }}
+          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+        >
+          <div className="flex items-center mb-6">
+            <Users className="h-8 w-8 text-blue-600 mr-3" />
+            <h2 className="text-2xl font-bold">Our Employees</h2>
+          </div>
+          <p className="text-gray-600 mb-6">
+            Currently, we employ more than 500 professionals who are the backbone of Ashok Textile Mills. 
+            We place a strong emphasis on employee welfare, ensuring a safe and comfortable working environment at all levels.
+          </p>
+        </motion.div>
+
+        {/* New Sections */}
+        {/* Our Production & Fabrics Section */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.4 }}
+          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+        >
+          <div className="flex items-center mb-6">
+            <Star className="h-8 w-8 text-blue-600 mr-3" />
+            <h2 className="text-2xl font-bold">Our Production & Fabrics</h2>
+          </div>
+          <p className="text-gray-600 mb-6">
+            The total production of Ashok Textile Mills is around 60+ million metres of fabric per annum. 
+            We produce a wide range of high-quality fabrics such as Superior quality Viscose, Modal, Livaeco, 
+            Excel, and more, all adhering to global standards.
+          </p>
+          <p className="text-gray-600 mb-6">
+            Ashok Textile Mills focuses on manufacturing 100% high-quality fabrics, and our commitment to 
+            excellence is evident through our international certifications and recognitions.
+          </p>
+        </motion.div>
+
+        {/* Employee Welfare Section */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.6 }}
+          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+        >
+          <div className="flex items-center mb-6">
+            <Users className="h-8 w-8 text-blue-600 mr-3" />
+            <h2 className="text-2xl font-bold">Employee Welfare</h2>
+          </div>
+          <p className="text-gray-600 mb-6">
+            Our employees are the important pillars of Ashok Textile Mills. We place great emphasis on 
+            employee welfare at all levels, ensuring a safe and comfortable working environment for everyone.
+          </p>
+        </motion.div>
+
+        {/* Key Stats moved here */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
@@ -135,23 +193,6 @@ const About = () => {
             <h3 className="text-xl font-bold mb-2">ISO 9001:2015</h3>
             <p className="text-gray-600">Certified Quality</p>
           </div>
-        </motion.div>
-
-        {/* Employee Section */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
-        >
-          <div className="flex items-center mb-6">
-            <Users className="h-8 w-8 text-blue-600 mr-3" />
-            <h2 className="text-2xl font-bold">Our Employees</h2>
-          </div>
-          <p className="text-gray-600 mb-6">
-            Currently, we employ more than 500 professionals who are the backbone of Ashok Textile Mills. 
-            We place a strong emphasis on employee welfare, ensuring a safe and comfortable working environment at all levels.
-          </p>
         </motion.div>
       </div>
     </motion.div>

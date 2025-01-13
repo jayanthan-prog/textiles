@@ -22,7 +22,8 @@ const Product = () => {
                 alt="product 1"
                 className="w-full h-auto rounded-md mb-4"
               />
-              <p className="text-center">Product 1</p>
+              <p className="text-center"> Compact Yarn
+              </p>
             </div>
             <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
@@ -30,7 +31,8 @@ const Product = () => {
                 alt="product g1"
                 className="w-full h-auto rounded-md mb-4"
               />
-              <p className="text-center">Product G1</p>
+              <p className="text-center">Plain Sheeting / Poplin
+              </p>
             </div>
             <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img
@@ -38,7 +40,8 @@ const Product = () => {
                 alt="product g2"
                 className="w-full h-auto rounded-md mb-4"
               />
-              <p className="text-center">Product G2</p>
+              <p className="text-center">Dobby Designs
+</p>
             </div>
             <div className="bg-[#faf2eb] p-6 rounded-lg shadow-md">
               <img

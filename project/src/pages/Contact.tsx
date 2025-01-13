@@ -264,3 +264,4 @@ const getGeminiResponse = async (message: string): Promise<string> => {
 };
 
 export default Contact;
+
