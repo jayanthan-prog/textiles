@@ -22,7 +22,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.captchaInput === captcha) {
-      console.log('Form submitted:', formData);
+      alert('Form submitted successfully!');
     } else {
       alert('Captcha incorrect! Please try again.');
       setCaptcha(generateCaptcha());
