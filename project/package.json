@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
-
   },
   "dependencies": {
     "axios": "^1.7.9",
@@ -18,7 +17,7 @@
     "express": "^4.21.2",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
-    "openai": "^4.77.3",
+    "openai": "^4.78.1",
     "react": "^18.3.1",
     "react-chatbot-kit": "^2.2.2",
     "react-countup": "^6.5.3",
@@ -29,7 +28,6 @@
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
-  
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
