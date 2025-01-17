@@ -5,7 +5,6 @@ import OpenAI from "openai";
 
 // Initialize OpenAI instance
 const openai = new OpenAI({
-    apiKey: "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",  // Replace with your actual OpenAI API key
     dangerouslyAllowBrowser: true  // Allowing usage directly in the frontend for demo purposes
 });
 
