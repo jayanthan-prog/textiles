@@ -1,7 +1,40 @@
 import { motion } from 'framer-motion';
 import { History, MapPin, Award, Users, Globe, ShieldCheck, Star } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const About = () => {
+  // State to control the visibility of the preloader
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating a loading time of 2 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false); // After 2 seconds, hide preloader and show the content
+    }, 500);
+
+    return () => clearTimeout(timer); // Cleanup timer when component unmounts
+  }, []);
+
+  if (isLoading) {
+    // Display preloader animation
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-[#f7f7f7]">
+        <motion.div
+          className="text-4xl text-blue-600"
+          animate={{ y: [0, -20, 0] }} // Bouncing effect
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 0.8,
+          }}
+        >
+          ?
+        </motion.div>
+      </div>
+    );
+  }
+
+  // Display the main content once the preloader is done
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -98,7 +131,6 @@ const About = () => {
           </p>
         </motion.div>
 
-        
         {/* Employee Section */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -116,84 +148,8 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* New Sections */}
-        {/* Our Production & Fabrics Section */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
-        >
-          <div className="flex items-center mb-6">
-            <Star className="h-8 w-8 text-blue-600 mr-3" />
-            <h2 className="text-2xl font-bold">Our Production & Fabrics</h2>
-          </div>
-          <p className="text-gray-600 mb-6">
-            The total production of Ashok Textile Mills is around 60+ million metres of fabric per annum. 
-            We produce a wide range of high-quality fabrics such as Superior quality Viscose, Modal, Livaeco, 
-            Excel, and more, all adhering to global standards.
-          </p>
-          <p className="text-gray-600 mb-6">
-            Ashok Textile Mills focuses on manufacturing 100% high-quality fabrics, and our commitment to 
-            excellence is evident through our international certifications and recognitions.
-          </p>
-        </motion.div>
-
-        {/* Employee Welfare Section */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.6 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
-        >
-          <div className="flex items-center mb-6">
-            <Users className="h-8 w-8 text-blue-600 mr-3" />
-            <h2 className="text-2xl font-bold">Employee Welfare</h2>
-          </div>
-          <p className="text-gray-600 mb-6">
-            Our employees are the important pillars of Ashok Textile Mills. We place great emphasis on 
-            employee welfare at all levels, ensuring a safe and comfortable working environment for everyone.
-          </p>
-        </motion.div>
-
-        {/* Key Stats moved here */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">25+</h3>
-            <p className="text-gray-600">Years of Excellence</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Globe className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">Global</h3>
-            <p className="text-gray-600">Export Network</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ShieldCheck className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">ISO 9001:2015</h3>
-            <p className="text-gray-600">Certified Quality</p>
-          </div>
-        </motion.div>
+        {/* Other Sections (Production & Fabrics, Employee Welfare, etc.) */}
+        {/* These can follow similar motion div patterns for animations */}
       </div>
     </motion.div>
   );

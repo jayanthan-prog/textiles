@@ -1,8 +1,20 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Factory, Cog, Scissors, Box } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const Infrastructure = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading time
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Set the loader to false after 3 seconds
+    }, 3000);
+
+    return () => clearTimeout(timer); // Clean up timer on component unmount
+  }, []);
+
   const divisions = [
     {
       title: "Spinning",
@@ -37,6 +49,57 @@ const Infrastructure = () => {
       backgroundImage: "url('https://ashoktextilemills.com/file/wp-content/uploads/2023/03/made-up-products-1.jpg')"
     }
   ];
+
+  if (isLoading) {
+    // Preloader: Construction Animation
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-[#f7f7f7]">
+        <motion.div
+          className="relative w-32 h-32"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Building Blocks Animation */}
+          <div className="absolute inset-0 w-full h-full flex justify-center items-center">
+            <motion.div
+              className="w-8 h-8 bg-gray-800 rounded-lg"
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 1,
+                delay: 0.2
+              }}
+            />
+          </div>
+          <motion.div
+            className="absolute inset-0 flex justify-center items-center"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 1.5,
+              delay: 0.4
+            }}
+          >
+            <motion.div
+              className="w-12 h-12 bg-blue-600 rounded-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 1.5
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
