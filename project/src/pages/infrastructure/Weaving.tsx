@@ -1,7 +1,66 @@
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Box, Target, Settings } from 'lucide-react';
 
+const Skeleton = ({ className }) => (
+  <div className={`animate-pulse bg-gray-300 ${className}`}></div>
+);
+
 const Weaving = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading period
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="page-container relative"
+      >
+        {/* Skeleton UI */}
+        <div className="max-w-4xl mx-auto relative z-10">
+          <Skeleton className="h-10 w-3/4 mb-8" />
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div className="flex items-center mb-6">
+              <Skeleton className="h-8 w-8 rounded-full mr-3" />
+              <Skeleton className="h-6 w-1/2" />
+            </div>
+            <Skeleton className="h-4 w-full mb-6" />
+            <Skeleton className="h-4 w-3/4 mb-6" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-blue-50 rounded-lg p-6">
+                <Skeleton className="h-8 w-8 mb-3" />
+                <Skeleton className="h-5 w-1/2 mb-2" />
+                <Skeleton className="h-4 w-full mb-2" />
+                <Skeleton className="h-4 w-full mb-2" />
+                <Skeleton className="h-4 w-3/4 mb-2" />
+              </div>
+              <div className="bg-blue-50 rounded-lg p-6">
+                <Skeleton className="h-8 w-8 mb-3" />
+                <Skeleton className="h-5 w-1/2 mb-2" />
+                <Skeleton className="h-4 w-full mb-2" />
+                <Skeleton className="h-4 w-full mb-2" />
+                <Skeleton className="h-4 w-3/4 mb-2" />
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <Skeleton className="h-6 w-1/3 mb-6" />
+            <Skeleton className="h-4 w-1/2 mb-4" />
+            <Skeleton className="h-4 w-full mb-2" />
+            <Skeleton className="h-4 w-full mb-2" />
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -9,20 +68,6 @@ const Weaving = () => {
       exit={{ opacity: 0 }}
       className="page-container relative"
     >
-      {/* Weaving animation (moving threads)
-      <motion.div
-        className="weaving-animation absolute top-0 left-0 w-full h-full"
-        initial={{ x: '-100%' }}
-        animate={{ x: ['0%', '100%', '0%'] }}
-        transition={{
-          repeat: Infinity,
-          duration: 6,
-          ease: 'easeInOut',
-        }}
-      >
-        <div className="weaving-thread"></div>
-      </motion.div> */}
-
       {/* Main page content */}
       <div className="max-w-4xl mx-auto relative z-10">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Weaving Division</h1>
