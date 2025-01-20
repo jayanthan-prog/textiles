@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import CountUp from 'react-countup'; // Import CountUp
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -142,35 +142,50 @@ const Home = () => {
         </motion.div>
       </motion.section>
 
-      {/* Key Stats Section */}
       <section className="py-16 bg-gradient-to-r from-[#8f999f] to-[#8f999f] text-center text-white">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[{
-            number: "54+ Million Metres",
-            label: "Fabric / Annum"
-          }, {
-            number: "14000+ Tons",
-            label: "Spinning Production Capacity / Annum"
-          }, {
-            number: "54+ Million Meters",
-            label: "Sizing Production Capacity / Annum"
-          }, {
-            number: "54+ Million Meters",
-            label: "Weaving Production Capacity / Annum"
-          }].map((stat, index) => (
-            <motion.div 
-              key={index} 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ type: "spring", stiffness: 150, damping: 25 }}
-              className="bg-[#8f999f] p-8 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-300"
-            >
-              <div className="text-4xl font-bold text-white">{stat.number}</div>
-              <p className="text-lg text-white mt-2">{stat.label}</p>
-            </motion.div>
-          ))}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    {[
+      {
+        number: "54",
+        label: "Million Metres Fabric / Annum",
+      },
+      {
+        number: "14000",
+        label: "Tons Spinning Production Capacity / Annum",
+      },
+      {
+        number: "54",
+        label: "Million Metres Sizing Production Capacity / Annum",
+      },
+      {
+        number: "54",
+        label: "Million Metres Weaving Production Capacity / Annum",
+      },
+    ].map((stat, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 150, damping: 25 }}
+        className="bg-[#8f999f] p-8 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-300"
+      >
+        <div className="text-4xl font-bold text-white">
+          <CountUp
+            start={0}
+            end={parseFloat(stat.number)}
+            duration={2}
+            separator=","
+          />{" "}
+          {index === 0 || index > 1 ? "Million Metres" : "Tons"}
         </div>
-      </section>
+        <p className="text-lg text-white mt-2">{stat.label}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+      
 
       {/* About Section */}
       <section className="py-20 bg-gray-50 text-center">
