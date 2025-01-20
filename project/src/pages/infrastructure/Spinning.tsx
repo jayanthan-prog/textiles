@@ -1,25 +1,40 @@
 import { Factory, Award, BarChart } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Spinning = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="page-container relative min-h-screen">
+      {/* Spinning Animation Loader */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+          <div className="animate-spin rounded-full h-24 w-24 border-t-4 border-blue-600"></div>
+        </div>
+      )}
+
       {/* Spinning Animation Background */}
       <div
         className="absolute inset-0 bg-transparent"
         style={{
           backgroundImage: 'url("https://www.rubymills.com/frontend/img/home/fabric.jpg")',
-          backgroundSize: 'cover', // Make sure it covers the whole screen
-          backgroundPosition: 'center', // Center the image
-          backgroundRepeat: 'no-repeat', // Prevent repeating the image
-          position: 'absolute', // Position the background absolutely
-          top: 0, // Ensure it starts from the top
-          left: 0, // Ensure it starts from the left
-          right: 0, // Ensure it covers to the right edge
-          bottom: 0, // Ensure it covers to the bottom edge
-          zIndex: -1, // Place it behind the content
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
         }}
       />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto bg-white bg-opacity-80 p-8 rounded-lg shadow-lg mt-16">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Spinning Division</h1>
 

@@ -1,7 +1,54 @@
 import { motion } from 'framer-motion';
 import { Cog, Ruler, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Sizing = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading for 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer); // Cleanup on component unmount
+  }, []);
+
+  if (loading) {
+    // Show the custom SVG animation while content is loading
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 300 150"
+            className="h-24 w-24"
+          >
+            <path
+              fill="none"
+              stroke="#6F8FFF"
+              strokeWidth="15"
+              strokeLinecap="round"
+              strokeDasharray="300 385"
+              strokeDashoffset="0"
+              d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                calcMode="spline"
+                dur="2.2"
+                values="685;-685"
+                keySplines="0 0 1 1"
+                repeatCount="indefinite"
+              ></animate>
+            </path>
+          </svg>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -105,11 +152,11 @@ const Sizing = () => {
           className="bg-white rounded-lg shadow-lg p-8 mt-8 text-center"
         >
           <h3 className="text-xl font-semibold mb-4">
-          Under Go The Sizing Process
-           </h3>
+            Under Go The Sizing Process
+          </h3>
           <p className="text-gray-600">
-          Sizing is the essential procedure we follow for our yarns before weaving them to reduce the breakage of yarn and increase the fabric quality.
-          There are many phenomenal benefits of sizing. Fabrics made from sizing yarn are easy for ironing, add a good body to the fabric, are soil resistant, easy to wash, etc. The benefits of the sizing procedure which we do to our yarns reach the end consumers. Apparel, garments and textile products made out of such high-quality fabrics have a high demand in the market. Warping machinery is also available in our Sizing Division.
+            Sizing is the essential procedure we follow for our yarns before weaving them to reduce the breakage of yarn and increase the fabric quality.
+            There are many phenomenal benefits of sizing. Fabrics made from sizing yarn are easy for ironing, add a good body to the fabric, are soil resistant, easy to wash, etc. The benefits of the sizing procedure which we do to our yarns reach the end consumers. Apparel, garments and textile products made out of such high-quality fabrics have a high demand in the market. Warping machinery is also available in our Sizing Division.
           </p>
         </motion.div>
       </div>
