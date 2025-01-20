@@ -7,6 +7,6 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    host: true, // Listen on all addresses, including LAN
+    host: true,  
   },
 });
