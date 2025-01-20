@@ -1,7 +1,42 @@
 import { motion } from 'framer-motion';
-import { Users, Target, Shield,  } from 'lucide-react';
+import { Users, Target, Shield, Settings } from 'lucide-react'; // Using Settings for the gear icon
+import { useEffect, useState } from 'react';
 
 const Management = () => {
+  // State to control the visibility of the preloader
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating a loading time of 2 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false); // After 2 seconds, hide preloader and show the content
+    }, 500);
+
+    return () => clearTimeout(timer); // Cleanup timer when component unmounts
+  }, []);
+
+  if (isLoading) {
+    // Display preloader animation with rotating gear
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-[#f7f7f7]">
+        <motion.div
+          className="text-blue-600"
+          animate={{
+            rotate: 360, // Rotate continuously
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 2, // Adjust the duration of a full rotation
+          }}
+        >
+          <Settings className="h-16 w-16" />
+        </motion.div>
+      </div>
+    );
+  }
+
+  // Display the main content once the preloader is done
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -66,8 +101,6 @@ const Management = () => {
             </ul>
           </motion.div>
         </div>
-
-      
       </div>
     </motion.div>
   );
