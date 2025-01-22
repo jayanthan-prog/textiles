@@ -110,7 +110,7 @@ const Career = () => {
                   <input
                     type="text"
                     required
-                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.firstName ? 'border-red-500' : ''}`}
+                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.firstName ? 'border-red-500' : ''}px-3 py-1.5 text-lg}`}
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                   />
@@ -125,7 +125,7 @@ const Career = () => {
                   <input
                     type="text"
                     required
-                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.lastName ? 'border-red-500' : ''}`}
+                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.lastName ? 'border-red-500' : ''}px-3 py-1.5 text-lg}`}
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                   />
@@ -142,7 +142,7 @@ const Career = () => {
                   <input
                     type="email"
                     required
-                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.email ? 'border-red-500' : ''}`}
+                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.email ? 'border-red-500' : ''}px-3 py-1.5 txt-lg`}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -157,7 +157,7 @@ const Career = () => {
                   <input
                     type="tel"
                     required
-                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.phone ? 'border-red-500' : ''}`}
+                    className={`mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${formError && !formData.phone ? 'border-red-500' : ''}px-3 py-1.5 txt-lg`}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
@@ -187,6 +187,7 @@ const Career = () => {
                 <input
                   type="file"
                   required
+                  accept="application/pdf"
                   className="mt-2 block w-full rounded-lg border-2 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                  />
               </motion.div>

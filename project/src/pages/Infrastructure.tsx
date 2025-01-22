@@ -10,7 +10,7 @@ const Infrastructure = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Set the loader to false after 3 seconds
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer); // Clean up timer on component unmount
   }, []);
@@ -51,51 +51,46 @@ const Infrastructure = () => {
   ];
 
   if (isLoading) {
-    // Preloader: Construction Animation
+    // Preloader: Blocks Building Animation
+    const blockVariants = {
+      hidden: { y: 50, opacity: 0 },
+      visible: (i) => ({
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: i * 0.2,
+          type: "spring",
+          stiffness: 100,
+        },
+      }),
+    };
+
     return (
       <div className="flex justify-center items-center min-h-screen bg-[#f7f7f7]">
         <motion.div
-          className="relative w-32 h-32"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          className="flex flex-col items-center"
+          initial="hidden"
+          animate="visible"
         >
-          {/* Building Blocks Animation */}
-          <div className="absolute inset-0 w-full h-full flex justify-center items-center">
+          {/* Stacking Blocks */}
+          {[...Array(5)].map((_, i) => (
             <motion.div
-              className="w-8 h-8 bg-gray-800 rounded-lg"
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 1,
-                delay: 0.2
-              }}
+              key={i}
+              className="w-12 h-12 bg-blue-600 rounded-md mb-2"
+              custom={i}
+              variants={blockVariants}
             />
-          </div>
-          <motion.div
-            className="absolute inset-0 flex justify-center items-center"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 1.5,
-              delay: 0.4
-            }}
+          ))}
+
+          {/* Text Below Animation */}
+          <motion.p
+            className="text-gray-600 font-medium mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
           >
-            <motion.div
-              className="w-12 h-12 bg-blue-600 rounded-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 1.5
-              }}
-            />
-          </motion.div>
+            Building your experience...
+          </motion.p>
         </motion.div>
       </div>
     );

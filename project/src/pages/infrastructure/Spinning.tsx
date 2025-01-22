@@ -5,7 +5,7 @@ const Spinning = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
+    const timer = setTimeout(() => setLoading(false), 700); // Adjust time as needed
     return () => clearTimeout(timer);
   }, []);
 
@@ -14,7 +14,14 @@ const Spinning = () => {
       {/* Spinning Animation Loader */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-          <div className="animate-spin rounded-full h-24 w-24 border-t-4 border-blue-600"></div>
+          <div className="relative">
+            <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-600"></div>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/8040/8040864.png"
+              alt="Loading"
+              className="absolute inset-0 m-auto h-16 w-16" // Adjust size as needed
+            />
+          </div>
         </div>
       )}
 

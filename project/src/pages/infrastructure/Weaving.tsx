@@ -11,7 +11,7 @@ const Weaving = () => {
 
   useEffect(() => {
     // Simulate a loading period
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
